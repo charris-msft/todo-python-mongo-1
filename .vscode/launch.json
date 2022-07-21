@@ -5,6 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: FastAPI",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "src.api.todo.main:app",
+            ],
+            "jinja": true,
+            "justMyCode": true
+        },
+        {
             "name": "Debug Web",
             "request": "launch",
             "type": "pwa-msedge",
@@ -14,7 +25,6 @@
                 "webpack:///src/*": "${webRoot}/*"
             },
         },
-
         {
             "name": "Debug API",
             "type": "python",
@@ -23,7 +33,8 @@
             "cwd": "${workspaceFolder}/src/api",
             "args": [
                 "todo.app:app",
-                "--port", "3100",
+                "--port",
+                "3100",
                 "--reload"
             ],
             "justMyCode": true,
@@ -35,7 +46,6 @@
             "preLaunchTask": "Restore API"
         }
     ],
-
     "inputs": [
         {
             "id": "dotEnvFilePath",
